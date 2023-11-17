@@ -27,7 +27,10 @@ app.use(morgan("common"));
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [
+      "http://localhost:3000",
+      "https://main--unrivaled-capybara-70ee56.netlify.app/",
+    ],
     method: ["GET", "POST"],
     credentials: true,
   })
@@ -40,6 +43,7 @@ const upload = multer({ storage: storage });
 const PORT = process.env.PORT || 3001;
 
 /* middlewares */
+// app.get("/", (req, res) => {
 
 import uploadRoutes from "./routes/uploadRoutes.js";
 
